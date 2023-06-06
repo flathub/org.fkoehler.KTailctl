@@ -22,8 +22,8 @@ modules:
     sources:
       - type: git
         url: "https://github.com/f-koehler/KTailctl.git"
-        tag: "v0.3.3"
-        commit: "cb1244d23b61d83bb8677cd8e1f410e88d639a51"
+        tag: "v0.3.4"
+        commit: "4e4b387161bbdcf24789f64d078b6f37d6ffabe4"
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.3.1/tailctlpp-vendor-v0.3.1.tar.gz
         sha256: 5307483d9e0b0924febdb6aff923a0964de681742b1f4df22b745625f2b8c65b

@@ -22,10 +22,10 @@ modules:
     sources:
       - type: git
         url: "https://github.com/f-koehler/KTailctl.git"
-        tag: "v0.4.0"
-        commit: "5c18d5083e30fb769627408e1d65c2ad79d6258c"
+        tag: "v0.4.1"
+        commit: "32233f216a7fbef8b4281f27cc1721a3520e1d9a"
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.4.0/tailctlpp-vendor-v0.4.0.tar.gz
-        sha256: 4584ec71d6130b62aea7ec14f49f7ea4062b7dd756a74b2c53bd26a52c76d4ad
+        url: "https://github.com/f-koehler/KTailctl/releases/download/v0.4.1/tailctlpp-vendor-v0.4.1.tar.gz"
+        sha256: 2a2fc81a68269b50a7c517d173ff972955b48ab874e917b885a60b9a9d73e049
         strip-components: 0
         dest: tailctlpp

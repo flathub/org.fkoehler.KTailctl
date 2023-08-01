@@ -15,17 +15,32 @@ finish-args:
 build-options:
   prepend-path: /usr/lib/sdk/golang/bin
 modules:
+  - name: kirigami-addons
+    buildsystem: cmake-ninja
+    config-opts:
+      - "-DBUILD_TESTING=OFF"
+      - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    sources:
+      - type: "archive"
+        url: "https://download.kde.org/stable/kirigami-addons/kirigami-addons-0.10.0.tar.xz"
+        sha256: "9897e70bf167f579cec06d09d49a9a27aba184cbd1b2fce2c3ae757a87b01216"
+        x-checker-data:
+          type: "anitya"
+          project-id: 242933
+          stable-only: true
+          url-template: "https://download.kde.org/stable/kirigami-addons/kirigami-addons-$version.tar.xz"
   - name: ktailctl
     buildsystem: cmake-ninja
     config-opts:
       - -DKTAILCTL_FLATPAK_BUILD=ON
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     sources:
       - type: git
         url: "https://github.com/f-koehler/KTailctl.git"
-        tag: "v0.6.0"
-        commit: "345a086567feb65432c5e0bca3eb0d4bcb9f60d8"
+        tag: "v0.7.0"
+        commit: "25bd9542029da6d6c173a9b5c3b3fda1238faeab"
       - type: archive
-        url: "https://github.com/f-koehler/KTailctl/releases/download/v0.4.1/tailctlpp-vendor-v0.4.1.tar.gz"
-        sha256: 2a2fc81a68269b50a7c517d173ff972955b48ab874e917b885a60b9a9d73e049
+        url: "https://github.com/f-koehler/KTailctl/releases/download/v0.7.0/tailctlpp-vendor-v0.7.0.tar.gz"
+        sha256: a78a554bbced07a86b81d313af0dd9a62501d1b1c432aa6061c6d9031bd91410
         strip-components: 0
         dest: tailctlpp

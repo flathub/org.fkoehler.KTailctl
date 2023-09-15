@@ -4,6 +4,7 @@ runtime-version: 5.15-22.08
 sdk: org.kde.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
+  - org.freedesktop.Sdk.Extension.llvm16
 command: ktailctl
 finish-args:
   - --socket=fallback-x11
@@ -14,12 +15,16 @@ finish-args:
   - --filesystem=/run/tailscale:ro
 build-options:
   prepend-path: /usr/lib/sdk/golang/bin
+  append-path: /usr/lib/sdk/llvm16/bin
+  prepend-ld-library-path: /usr/lib/sdk/llvm16/lib
 modules:
   - name: kirigami-addons
     buildsystem: cmake-ninja
     config-opts:
-      - -DBUILD_TESTING=OFF
-      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - "-DBUILD_TESTING=OFF"
+      - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+      - "-DCMAKE_CXX_COMPILER=clang++"
+      - "-DCMAKE_C_COMPILER=clang"
     sources:
       - type: archive
         url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-0.11.0.tar.xz
@@ -32,15 +37,17 @@ modules:
   - name: ktailctl
     buildsystem: cmake-ninja
     config-opts:
-      - -DKTAILCTL_FLATPAK_BUILD=ON
-      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - "-DKTAILCTL_FLATPAK_BUILD=ON"
+      - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+      - "-DCMAKE_CXX_COMPILER=clang++"
+      - "-DCMAKE_C_COMPILER=clang"
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.7.1
-        commit: 8987256b9f713db6ddb3be5241fd7dd855f69044
+        tag: v0.8.0
+        commit: 3049b3acb74196cf2972abc84636ad1c26a2d02a
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.7.1/tailctlpp-vendor-v0.7.1.tar.gz
-        sha256: 96a0da3ad630b07167128a5e22b63781981b8001f76c7b33890d63e986d3643e
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.8.0/tailwrap-vendor-v0.8.0.tar.gz
+        sha256: 1e4d7b71709853d2e4c27cb530a58a905dab813435b1d8562153edb7f309c759
         strip-components: 0
-        dest: tailctlpp
+        dest: tailwrap

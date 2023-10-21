@@ -44,8 +44,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.10.0
-        commit: 6d8338843b5b94dfd90fd983e422bd95233c40fb
+        tag: v0.11.0
+        commit: c0d12223f6ef711c58178f2b80bf65f88a9b5f45
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.10.0/tailwrap-vendor-v0.10.0.tar.gz
         sha256: e1fcb369ce5b09e0296ef73a888281321cbc95628c1cb20241197f991f909d64

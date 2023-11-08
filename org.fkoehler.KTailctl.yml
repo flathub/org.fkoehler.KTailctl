@@ -44,7 +44,8 @@ modules:
     sources:
       - type: archive
         url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-0.11.0.tar.xz
-        sha256: 05296c5afbe6804308bf9c0d2751f3b748b40d00fa784946d1dcdf3af4bffbad
+        sha256:
+          05296c5afbe6804308bf9c0d2751f3b748b40d00fa784946d1dcdf3af4bffbad
           # x-checker-data:
           #   type: anitya
           #   project-id: 242933
@@ -63,7 +64,7 @@ modules:
         tag: v0.12.1
         commit: ac304dae604fc9e40297f331310758f40607f98e
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.12.0/tailwrap-vendor-v0.12.0.tar.gz
-        sha256: 5153c27c4c27af64c35cd81d9d54e3782c79ee39625e9c65263ed507f1a7524d
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.12.1/tailwrap-vendor-v0.12.1.tar.gz
+        sha256: e3533b5aa641b789b6e63bf38fedfa059bf86ccf0af9616b17f398a43d189225
         strip-components: 0
         dest: tailwrap

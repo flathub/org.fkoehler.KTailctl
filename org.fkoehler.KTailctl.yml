@@ -1,6 +1,6 @@
 app-id: org.fkoehler.KTailctl
 runtime: org.kde.Platform
-runtime-version: "6.6"
+runtime-version: '6.6'
 sdk: org.kde.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -37,19 +37,19 @@ modules:
   - name: kirigami-addons
     buildsystem: cmake-ninja
     config-opts:
-      - "-DBUILD_TESTING=OFF"
-      - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-      - "-DCMAKE_CXX_COMPILER=clang++"
-      - "-DCMAKE_C_COMPILER=clang"
+      - -DBUILD_TESTING=OFF
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DCMAKE_CXX_COMPILER=clang++
+      - -DCMAKE_C_COMPILER=clang
     sources:
-      - type: "archive"
-        url: "https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.0.1.tar.xz"
-        sha256: "9d013847efb0048c6a2799ee0ed281b14eee15314ac20d7fba853197e45f29b7"
+      - type: archive
+        url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.1.0.tar.xz
+        sha256: 8ef352499139616b3142a6d7a92ab23749c568403ece8d854f064a941d085536
         x-checker-data:
-          type: "anitya"
+          type: anitya
           project-id: 242933
           stable-only: true
-          url-template: "https://download.kde.org/stable/kirigami-addons/kirigami-addons-$version.tar.xz"
+          url-template: https://download.kde.org/stable/kirigami-addons/kirigami-addons-$version.tar.xz
   - name: ktailctl
     buildsystem: cmake-ninja
     config-opts:
@@ -64,6 +64,6 @@ modules:
         commit: 8c65bea07377886bf3a2add3dd13b5668c77ade2
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.16.0/tailwrap-vendor-v0.16.0.tar.gz
-        sha256: "675d209ee0e16d5a04d54468740367a8f473362421a619e81eee5aa20578ff4d"
+        sha256: 675d209ee0e16d5a04d54468740367a8f473362421a619e81eee5aa20578ff4d
         strip-components: 0
         dest: tailwrap

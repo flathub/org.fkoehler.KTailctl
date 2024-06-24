@@ -61,9 +61,9 @@ modules:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
         tag: v0.16.1
-        commit: f5c41913107e5fe3b7c8cd406038de85b78ab8b6
+        commit: a5f89d5671a45fb2ae984e34284320ef61ea47ff
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.16.1/ktailctl-wrapper-vendor-v0.16.1.tar.gz
-        sha256: cd4915d6b7569a3122d58c17c7e41438de535b0bc9b484350150e0bc5bd448a6
+        sha256: ef0e05d01666481f1067fc41696bbbb6e1cf7ecdd71a662c3e3741682b30ebc6
         strip-components: 0
         dest: tailwrap

@@ -61,7 +61,7 @@ modules:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
         tag: v0.17.0
-        commit: 5cb6ed9c11f4e0f732037ec7b703c0a8f1e97114
+        commit: 3a8300aef03b254a4eff4b9d848756b9dbea45f6
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.17.0/ktailctl-wrapper-vendor-v0.17.0.tar.gz
         sha256: df1568f370f7b390a67c1860c3e66a2f3bcfbf1713932726f94d5dcf5ec4005d

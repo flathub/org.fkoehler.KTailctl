@@ -60,8 +60,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.18.0
-        commit: a5a9a6db03dcc73dda7debd451e4f8906cc79f43
+        tag: v0.18.1
+        commit: 0aea4cfae54fcf3178105b7aec44120c9b3b6ef8
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.18.0/ktailctl-wrapper-vendor-v0.18.0.tar.gz
         sha256: 0fc7c5309e798a3e0c83bc5ab44e6c58d06e02e75517ab39df1b6591f149b674

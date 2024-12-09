@@ -1,10 +1,9 @@
 app-id: org.fkoehler.KTailctl
 runtime: org.kde.Platform
-runtime-version: '6.7'
+runtime-version: '6.8'
 sdk: org.kde.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
-  - org.freedesktop.Sdk.Extension.llvm18
 command: ktailctl
 finish-args:
   - --socket=fallback-x11
@@ -15,14 +14,11 @@ finish-args:
   - --filesystem=/run/tailscale:ro
 build-options:
   prepend-path: /usr/lib/sdk/golang/bin
-  append-path: /usr/lib/sdk/llvm18/bin
-  prepend-ld-library-path: /usr/lib/sdk/llvm18/lib
 modules:
   - name: nlohmann_json
     buildsystem: cmake-ninja
     config_opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      - -DCMAKE_CXX_COMPILER=clang++
       - -DJSON_MultipleHeaders=ON
       - -DJSON_BuildTests=OFF
     sources:
@@ -39,12 +35,10 @@ modules:
     config-opts:
       - -DBUILD_TESTING=OFF
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      - -DCMAKE_CXX_COMPILER=clang++
-      - -DCMAKE_C_COMPILER=clang
     sources:
       - type: archive
-        url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.4.0.tar.xz
-        sha256: 56e3ceb52055b5603320ea08b27d3673d32a391a8d58646d998227d8b51f0a93
+        url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.6.0.tar.xz
+        sha256: 376dae6fc5acac7d0905ce9fef3211be0705c6e2df52bb80dfde1eaa20fe1bfa
         x-checker-data:
           type: anitya
           project-id: 242933
@@ -55,15 +49,13 @@ modules:
     config-opts:
       - -DKTAILCTL_FLATPAK_BUILD=ON
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      - -DCMAKE_CXX_COMPILER=clang++
-      - -DCMAKE_C_COMPILER=clang
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.18.1
-        commit: 0aea4cfae54fcf3178105b7aec44120c9b3b6ef8
+        tag: v0.18.2
+        commit: 671c8eb164608ece28177f3f10ecdb8276b01242
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.18.0/ktailctl-wrapper-vendor-v0.18.0.tar.gz
-        sha256: 0fc7c5309e798a3e0c83bc5ab44e6c58d06e02e75517ab39df1b6591f149b674
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.18.2/ktailctl-wrapper-vendor-v0.18.2.tar.gz
+        sha256: b87d2e84ed62d82c6093effb5c3987817e2a980e29f058d23c97d0dc3e0a1ab8
         strip-components: 0
         dest: src/wrapper

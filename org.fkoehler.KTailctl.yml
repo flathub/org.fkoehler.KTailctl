@@ -12,6 +12,8 @@ finish-args:
   - --share=ipc
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=/run/tailscale:ro
+  - --own-name=org.fkoehler.KTailctl
+  - --talk-name=org.fkoehler.KTailctl
 build-options:
   prepend-path: /usr/lib/sdk/golang/bin
 modules:

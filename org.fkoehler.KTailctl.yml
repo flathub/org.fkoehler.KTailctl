@@ -12,6 +12,7 @@ finish-args:
   - --share=ipc
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=/run/tailscale:ro
+  - --talk-name=org.fkoehler.KTailctl
 build-options:
   prepend-path: /usr/lib/sdk/golang/bin
 modules:
@@ -37,8 +38,8 @@ modules:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     sources:
       - type: archive
-        url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.6.0.tar.xz
-        sha256: 376dae6fc5acac7d0905ce9fef3211be0705c6e2df52bb80dfde1eaa20fe1bfa
+        url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.7.0.tar.xz
+        sha256: 7d854975185cf740de486d84f1e2ec3e4eadb66ac9fb897214cba9ab8cc492b1
         x-checker-data:
           type: anitya
           project-id: 242933
@@ -52,8 +53,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.19.0
-        commit: bcf9799bb6ede25337f036bb801e7b6c77222895
+        tag: v0.19.1
+        commit: 75a7b94521b639795b56dd5af26f821e2748edbc
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.19.0/ktailctl-wrapper-vendor-v0.19.0.tar.gz
         sha256: b6a3cae937ce57a68085d83ec7359ba0e374f690decb0fcd36d9859e772b2582

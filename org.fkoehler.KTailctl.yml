@@ -1,6 +1,6 @@
 app-id: org.fkoehler.KTailctl
 runtime: org.kde.Platform
-runtime-version: '6.8'
+runtime-version: "6.8"
 sdk: org.kde.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -52,10 +52,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.19.1
-        commit: 75a7b94521b639795b56dd5af26f821e2748edbc
+        tag: v0.19.2
+        commit: 7d09586e60109bc52a8c60ebb21bc16e984eb3b7
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.19.0/ktailctl-wrapper-vendor-v0.19.0.tar.gz
-        sha256: b6a3cae937ce57a68085d83ec7359ba0e374f690decb0fcd36d9859e772b2582
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.19.2/ktailctl-wrapper-vendor-v0.19.2.tar.gz
+        sha256: 50b82a5c1de9ef8bfcbc32b8b5a4974af7eefd5cff3732711f65f8dde056bd02
         strip-components: 0
         dest: src/wrapper

@@ -1,6 +1,6 @@
 app-id: org.fkoehler.KTailctl
 runtime: org.kde.Platform
-runtime-version: "6.8"
+runtime-version: "6.9"
 sdk: org.kde.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -38,7 +38,7 @@ modules:
     sources:
       - type: archive
         url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.8.1.tar.xz
-        sha256: 00028ae4df99e250518345ea28d9cdf49d700e9acac482734bb51384da11f945
+        sha256: 7112ef2dba0fa4794599d916bdb49d18a9f18ed540938ac4be6151eeea1226cd
         x-checker-data:
           type: anitya
           project-id: 242933
@@ -52,10 +52,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.20.1
+        tag: v0.20.2
         commit: 739ab082163a871f138633bb0165443d1c62e3eb
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.20.1/ktailctl-wrapper-vendor-v0.20.1.tar.gz
-        sha256: aa400605dc0c7f355c144092cc1b879d545e4fcb9894e80df12fbe256ef3f36b
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.20.2/ktailctl-wrapper-vendor-v0.20.2.tar.gz
+        sha256: 11747c278d1ebe0fda3dd52d014ed08da431d0d8c97de4f61d53d57cfc75de4b
         strip-components: 0
         dest: src/wrapper

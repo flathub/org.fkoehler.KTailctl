@@ -52,10 +52,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.20.2
-        commit: b102f6d4a9e03d6f4d3e3700866186499d861859
+        tag: v0.21.0
+        commit: d93c46b7224c860dbb2fb000bb757f0c0dd4a9f0
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.21.0/ktailctl-wrapper-vendor-v0.21.0.tar.gz
-        sha256: 48c18046848b553c95b29d03356ef3a1d325797a6c23c55f27d80574e63076c7
+        sha256: 706e54213d11c13096922567ec220a05423fee8585ac43b218fb5d84e3480b8d
         strip-components: 0
         dest: src/wrapper

@@ -37,8 +37,8 @@ modules:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     sources:
       - type: archive
-        url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.8.1.tar.xz
-        sha256: 00028ae4df99e250518345ea28d9cdf49d700e9acac482734bb51384da11f945
+        url: https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.9.0.tar.xz
+        sha256: 21314a91f26b1c962def3fd7ff2e762d3358b075f63f4d7e0144fb2c63b7ebc7
         x-checker-data:
           type: anitya
           project-id: 242933
@@ -52,10 +52,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.20.2
-        commit: b102f6d4a9e03d6f4d3e3700866186499d861859
+        tag: v0.21.0
+        commit: d93c46b7224c860dbb2fb000bb757f0c0dd4a9f0
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.20.2/ktailctl-wrapper-vendor-v0.20.2.tar.gz
-        sha256: 11747c278d1ebe0fda3dd52d014ed08da431d0d8c97de4f61d53d57cfc75de4b
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.21.0/ktailctl-wrapper-vendor-v0.21.0.tar.gz
+        sha256: 706e54213d11c13096922567ec220a05423fee8585ac43b218fb5d84e3480b8d
         strip-components: 0
         dest: src/wrapper

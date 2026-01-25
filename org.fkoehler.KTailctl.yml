@@ -15,21 +15,6 @@ finish-args:
 build-options:
   prepend-path: /usr/lib/sdk/golang/bin
 modules:
-  - name: nlohmann_json
-    buildsystem: cmake-ninja
-    config_opts:
-      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      - -DJSON_MultipleHeaders=ON
-      - -DJSON_BuildTests=OFF
-    sources:
-      - type: archive
-        url: https://github.com/nlohmann/json/archive/refs/tags/v3.12.0.tar.gz
-        sha256: 4b92eb0c06d10683f7447ce9406cb97cd4b453be18d7279320f7b2f025c10187
-        x-checker-data:
-          type: anitya
-          project-id: 11152
-          stable-only: true
-          url-template: https://github.com/nlohmann/json/archive/refs/tags/v$version.tar.gz
   - name: ktailctl
     buildsystem: cmake-ninja
     config-opts:
@@ -40,8 +25,32 @@ modules:
         url: https://github.com/f-koehler/KTailctl.git
         tag: v0.21.5
         commit: 96ef4af8d1d844ba37944be4f627f965cb9a9a46
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.21.5/ktailctl-wrapper-vendor-v0.21.5.tar.gz
         sha256: 3199b86a912f09d7b3e98bd00a3078b1d599a43a98c4b4b6fd3e032411406f1f
         strip-components: 0
         dest: src/wrapper
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/f-koehler/KTailctl/releases/latest
+          version-query: .tag_name | sub("^[vV]"; "")
+          url-query: .assets[] | select(.name=="ktailctl-wrapper-vendor-v" + $version + ".tar.gz") | .browser_download_url
+    modules:
+      - name: nlohmann_json
+        buildsystem: cmake-ninja
+        config_opts:
+          - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+          - -DJSON_MultipleHeaders=ON
+          - -DJSON_BuildTests=OFF
+        sources:
+          - type: archive
+            url: https://github.com/nlohmann/json/archive/refs/tags/v3.12.0.tar.gz
+            sha256: 4b92eb0c06d10683f7447ce9406cb97cd4b453be18d7279320f7b2f025c10187
+            x-checker-data:
+              type: anitya
+              project-id: 11152
+              stable-only: true
+              url-template: https://github.com/nlohmann/json/archive/refs/tags/v$version.tar.gz

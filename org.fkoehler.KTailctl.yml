@@ -40,8 +40,16 @@ modules:
         url: https://github.com/f-koehler/KTailctl.git
         tag: v0.21.5
         commit: 96ef4af8d1d844ba37944be4f627f965cb9a9a46
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.21.5/ktailctl-wrapper-vendor-v0.21.5.tar.gz
         sha256: 3199b86a912f09d7b3e98bd00a3078b1d599a43a98c4b4b6fd3e032411406f1f
         strip-components: 0
         dest: src/wrapper
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/f-koehler/KTailctl/releases/latest
+          version-query: .tag_name | sub("^[vV]"; "")
+          url-query: .assets[] | select(.name=="ktailctl-wrapper-vendor-v" + $version + ".tar.gz") | .browser_download_url

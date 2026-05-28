@@ -24,9 +24,9 @@ modules:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
         tag: v0.22.0-beta1
-        commit: 8715e0a544df52fe84d927f964f986f7649d5e2f
+        commit: 04c45209831f1c930a9831ef9db408d69cb1a376
       - type: archive
         url: https://github.com/f-koehler/KTailctl/releases/download/v0.22.0-beta1/ktailctl-wrapper-vendor-v0.22.0-beta1.tar.gz
-        sha256: 1ec339e257fbdadf37cc4e1664c8ce76e4cac52318815704f5675f6734c7d81a
+        sha256: 7cbb9369a702fb4a0e7692a1cb0edc60de42c2deb78c0c53d45d79a655c63243
         strip-components: 0
         dest: src/tailscale/wrapper

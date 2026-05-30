@@ -10,6 +10,7 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --share=ipc
+  - --share=network
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=/run/tailscale:ro
 build-options:
@@ -23,10 +24,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.22.0-beta1
-        commit: 04c45209831f1c930a9831ef9db408d69cb1a376
+        tag: v0.22.0-beta2
+        commit: 7ccc3ef8cd2008b8c6053370a66d2bcc1413c80f
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.22.0-beta1/ktailctl-wrapper-vendor-v0.22.0-beta1.tar.gz
-        sha256: 7cbb9369a702fb4a0e7692a1cb0edc60de42c2deb78c0c53d45d79a655c63243
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.22.0-beta2/ktailctl-wrapper-vendor-v0.22.0-beta2.tar.gz
+        sha256: 405d65b7ed90af67845e76f53e9548fadbf9003a23961a747825dd81614df408
         strip-components: 0
         dest: src/tailscale/wrapper

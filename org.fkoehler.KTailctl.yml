@@ -24,10 +24,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.22.0
-        commit: 18450dfea4aec686b2b110d4329250442ddbe4d0
+        tag: v0.22.1
+        commit: 243b22838f033ebacb2ee44d63a2ab36852dce52
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.22.0/ktailctl-wrapper-vendor-v0.22.0.tar.gz
-        sha256: 52b1ad28fbff7b6609ea6f87024ecf8d58c1d403d404b9bcd5e10aad61ed9e71
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.22.1/ktailctl-wrapper-vendor-v0.22.1.tar.gz
+        sha256: 308aa3646b6d1bbd3d5fe35b86a6a2aa8126a7aa80fff124617820d3a5cda614
         strip-components: 0
         dest: src/tailscale/wrapper

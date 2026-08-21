@@ -14,20 +14,51 @@ finish-args:
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=/run/tailscale:ro
 build-options:
-  prepend-path: /usr/lib/sdk/golang/bin
+  env:
+    GOTOOLCHAIN: local
+    GOPROXY: "off"
+cleanup:
+  - /tools
 modules:
+  - name: go-toolchain
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/tools/go
+      - cp -r . /app/tools/go
+    sources:
+      - type: archive
+        only-arches:
+          - x86_64
+        url: https://go.dev/dl/go1.27.0.linux-amd64.tar.gz
+        sha256: 675c26c449cbb18fc24b74650de1eabbae6e16f64326fd85a283fb3b58280685
+        x-checker-data:
+          type: json
+          url: https://go.dev/dl/?mode=json
+          version-query: .[0].version
+          url-query: '"https://go.dev/dl/" + (.[0].files[] | select(.os=="linux" and .arch=="amd64" and .kind=="archive") | .filename)'
+      - type: archive
+        only-arches:
+          - aarch64
+        url: https://go.dev/dl/go1.27.0.linux-arm64.tar.gz
+        sha256: 51798d2c42d0e1c6ed7fd9f48728b4193abac9e8aad6dbac2fe96a81f5909bda
+        x-checker-data:
+          type: json
+          url: https://go.dev/dl/?mode=json
+          version-query: .[0].version
+          url-query: '"https://go.dev/dl/" + (.[0].files[] | select(.os=="linux" and .arch=="arm64" and .kind=="archive") | .filename)'
   - name: ktailctl
     buildsystem: cmake-ninja
     config-opts:
-      - -DKTAILCTL_FLATPAK_BUILD=ON
-      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - "-DKTAILCTL_FLATPAK_BUILD=ON"
+      - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+      - "-DGO_EXECUTABLE=/app/tools/go/bin/go"
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.22.1
-        commit: 243b22838f033ebacb2ee44d63a2ab36852dce52
+        tag: v0.22.2
+        commit: c0e7a0e85e07e4bdb4ac3fe152fa9f8d42572691
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.22.1/ktailctl-wrapper-vendor-v0.22.1.tar.gz
-        sha256: 308aa3646b6d1bbd3d5fe35b86a6a2aa8126a7aa80fff124617820d3a5cda614
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.22.2/ktailctl-wrapper-vendor-v0.22.2.tar.gz
+        sha256: 5dc584ea2145351e208293f6eb4197b80c6ea69e4c027d47e11007397fda36f6
         strip-components: 0
         dest: src/tailscale/wrapper

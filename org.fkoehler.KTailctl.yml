@@ -29,8 +29,8 @@ modules:
       - type: archive
         only-arches:
           - x86_64
-        url: https://go.dev/dl/go1.27.0.linux-amd64.tar.gz
-        sha256: 675c26c449cbb18fc24b74650de1eabbae6e16f64326fd85a283fb3b58280685
+        url: https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
+        sha256: 63d339f0da5ab53635a56f2490a7984dfe12dfcff22ad749f63edaf590168445
         x-checker-data:
           type: json
           url: https://go.dev/dl/?mode=json
@@ -39,8 +39,8 @@ modules:
       - type: archive
         only-arches:
           - aarch64
-        url: https://go.dev/dl/go1.27.0.linux-arm64.tar.gz
-        sha256: 51798d2c42d0e1c6ed7fd9f48728b4193abac9e8aad6dbac2fe96a81f5909bda
+        url: https://go.dev/dl/go1.27.1.linux-arm64.tar.gz
+        sha256: 3450b45a3f9ee8568792736a5c5e70a1f2e9b36c35a8f74958c03e51d7d92bec
         x-checker-data:
           type: json
           url: https://go.dev/dl/?mode=json
@@ -55,10 +55,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/f-koehler/KTailctl.git
-        tag: v0.22.2
-        commit: c0e7a0e85e07e4bdb4ac3fe152fa9f8d42572691
+        tag: v0.22.3
+        commit: 8e6ddb1ecb500b9955b176b8bd91f922a9c3379f
       - type: archive
-        url: https://github.com/f-koehler/KTailctl/releases/download/v0.22.2/ktailctl-wrapper-vendor-v0.22.2.tar.gz
-        sha256: 5dc584ea2145351e208293f6eb4197b80c6ea69e4c027d47e11007397fda36f6
+        url: https://github.com/f-koehler/KTailctl/releases/download/v0.22.3/ktailctl-wrapper-vendor-v0.22.3.tar.gz
+        sha256: 4890a1e32396e7e6468615b09f95827a3d5761807f4df59e95a6d30b5884860a
         strip-components: 0
         dest: src/tailscale/wrapper
